@@ -3,3 +3,4 @@ build/
 buck-out/
 .buckd/
 .buckconfig.local
+*.user

@@ -2,7 +2,7 @@
 
 Name: argh
 Version: 1.3.2
-Release: alt1
+Release: alt2
 
 Summary: Command line arguments parser
 License: BSD-3-Clause
@@ -28,6 +28,8 @@ Minimalistic header-only parser of command line arguments for C++ programs
 ./%_cmake__builddir/argh_tests
 
 %install
+%cmakeinstall_std
+
 install -D -m644 %name.h %buildroot%_includedir/%name.h
 install -D -m644 LICENSE %buildroot%_datadir/doc/%name/LICENSE
 install -D -m644 README.md %buildroot%_datadir/doc/%name/README.md
@@ -36,7 +38,12 @@ install -D -m644 README.md %buildroot%_datadir/doc/%name/README.md
 %_includedir/%name.h
 %_datadir/doc/%name/LICENSE
 %_datadir/doc/%name/README.md
+%_libdir/cmake/%name/%name-config.cmake
+%_libdir/cmake/%name/%{name}Targets.cmake
 
 %changelog
+* Sun Sep 15 2024 Pavel Khromov <hromovpi@altlinux.org> 1.3.2-alt2
+- Installing CMake targets
+
 * Wed Sep 04 2024 Pavel Khromov <hromovpi@altlinux.org> 1.3.2-alt1
 - Initial build for ALT
