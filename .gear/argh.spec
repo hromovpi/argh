@@ -36,13 +36,12 @@ install -D -m644 README.md %buildroot%_datadir/doc/%name/README.md
 
 %files
 %_includedir/%name.h
-%_datadir/doc/%name/LICENSE
-%_datadir/doc/%name/README.md
-%_libdir/cmake/%name/%name-config.cmake
-%_libdir/cmake/%name/%{name}Targets.cmake
+%_datadir/doc/%name/
+%_libdir/cmake/%name/
 
 %changelog
 * Sun Sep 15 2024 Pavel Khromov <hromovpi@altlinux.org> 1.3.2-alt2
+- Fix uninstalling package
 - Installing CMake targets
 
 * Wed Sep 04 2024 Pavel Khromov <hromovpi@altlinux.org> 1.3.2-alt1
